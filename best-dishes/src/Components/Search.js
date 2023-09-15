@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Search() {
-    return (
-        <div>
+  const [searchValue, setSearchValue] = useState("");
+  const [mySearch, setMySearch] = useState("");
 
-        </div>
-    )
+  const handleOnChange = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  const handleSearch = () => {
+    setMySearch(searchValue);
+  };
+  return (
+    <div>
+      <input
+        placeholder="search recipe"
+        value={searchValue}
+        onChange={handleOnChange}
+      ></input>
+      <button onClick={handleSearch}>Search</button>
+    </div>
+  );
 }
 
 export default Search;
