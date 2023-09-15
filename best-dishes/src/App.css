@@ -36,3 +36,57 @@
     transform: rotate(360deg);
   }
 }
+.navbar {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  background-color: grey;
+  display:flex;
+
+}
+.navbar > div{
+  width: 33%;
+  margin-top: 0;
+}
+
+.navbar >div>ul>li{
+   list-style-type: none;
+
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.div2{
+  text-align: center;
+  font-size: 30;
+  font-weight: 500 ;
+}
+.recipes{
+  display: flex;
+  justify-content: end;
+}
+.recipes >li{
+  margin-right: 100px;
+
+}
+
+footer{
+  background-color:grey;
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+padding: 10px; /* Example padding for content inside the footers */
+
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%; /* Make the footer span the entire width */
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #6b6a6a;
+}
+
