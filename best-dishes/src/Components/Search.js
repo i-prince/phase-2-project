@@ -1,3 +1,4 @@
+// Search.js
 import React, { useState } from "react";
 
 function Search() {
@@ -11,14 +12,27 @@ function Search() {
   const handleSearch = () => {
     setMySearch(searchValue);
   };
+
   return (
-    <div>
-      <input
-        placeholder="search recipe"
-        value={searchValue}
-        onChange={handleOnChange}
-      ></input>
-      <button onClick={handleSearch}>Search</button>
+    <div className="container mt-5">
+      <div className="input-group mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Type a recipe"
+          value={searchValue}
+          onChange={handleOnChange}
+        />
+        <div className="input-group-append">
+          <button
+            className="btn btn-primary"
+            type="button"
+            onClick={handleSearch}
+          >
+            Find Recipe
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
