@@ -6,7 +6,7 @@ import { faHome, faUtensils, faSearch } from "@fortawesome/free-solid-svg-icons"
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-md">
       <div className="container">
         <Link className="navbar-brand active" to="/">
           <FontAwesomeIcon icon="home" /> Home

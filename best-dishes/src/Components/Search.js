@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 function removeHtmlTags(input) {
   return input ? input.replace(/<[^>]*>?/gm, '') : '';
 }

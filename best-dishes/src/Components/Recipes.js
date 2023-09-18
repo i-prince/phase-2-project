@@ -32,21 +32,19 @@ function RecipeApp() {
       });
   }, []);
 
-
   return (
     <div className="recipe-cards">
-    {recipes.map((recipe) => (
-             
-      <div className="recipe-card" key={recipe.id}>
-        <h3>{recipe.title}</h3>
-        <img src={recipe.image} alt={recipe.title} />
-        <p>{recipe.cuisines}</p>
-        <p>Instructions: {recipe.instructions}</p>
-
-      </div>
+      {recipes.map((recipe) => (
+        <div className="recipe-card" key={recipe.id}>
+          <h3>{recipe.title}</h3>
+          <img src={recipe.image} alt={recipe.title} />
+          <p>{recipe.cuisines}</p>
+          <p>Instructions: {removeHtmlTags(recipe.instructions)}</p>
+        </div>
       ))}
     </div>
   );
 }
 
 export default RecipeApp;
+
