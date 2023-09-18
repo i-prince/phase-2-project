@@ -13,7 +13,6 @@ function Footer() {
             <h3>ABOUT US</h3>
             <p>
               <h4>Our Story:</h4>
-              Our love for food and cooking brought us together to create this haven for foodies, home cooks, and anyone eager to explore the joy of gastronomy. It all started with a shared passion for savoring and sharing exceptional dishes. From there, we embarked on a culinary adventure, experimenting with ingredients, techniques, and cuisines from every corner of the globe.
             </p>
           </div>
 
@@ -31,16 +30,7 @@ function Footer() {
                     <FontAwesomeIcon icon={faLinkedin} size="4x" className="icon-black" /> 
                   </a>
                 </p>
-                <p>
-                  <a href="https://www.instagram.com">
-                    <FontAwesomeIcon icon={faInstagram} size="4x" className="icon-black" /> 
-                  </a>
-                </p>
-                <p>
-                  <a href="https://www.whatsapp.com">
-                    <FontAwesomeIcon icon={faWhatsapp} size="4x" className="icon-black" /> 
-                  </a>
-                </p>
+    
               </div>
             </div>
           </div>
