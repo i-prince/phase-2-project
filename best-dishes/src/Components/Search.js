@@ -1,11 +1,22 @@
 import React, { useState } from "react";
+import Addreview from './AddReview';
 
 function removeHtmlTags(input) {
   return input ? input.replace(/<[^>]*>?/gm, '') : '';
 }
 
-
 function Search() {
+  const [recipes, setRecipes] = useState([]);
+  const [recipeComments, setRecipeComments] = useState({});
+
+  const handleCommentSubmit = (comment, recipeId) => {
+    if (!recipeComments[recipeId]) {
+      recipeComments[recipeId] = [];
+    }
+    recipeComments[recipeId].push(comment);
+    setRecipeComments({ ...recipeComments });
+  };
+
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
@@ -59,14 +70,26 @@ function Search() {
       </div>
       <h2>Search Results</h2>
       {searchResults.map((recipe) => (
-             <div className="recipe-card" key={recipe.id}>
-               <h3>{recipe.title}</h3>
-               <img src={recipe.image} alt={recipe.title} />
-               <p>{(recipe.instructions)}</p>
-             </div>
-             ))}
+        <div className="recipe-card" key={recipe.id}>
+          <h3>{recipe.title}</h3>
+          <img src={recipe.image} alt={recipe.title} />
+          <p>Instructions: {recipe.instructions}</p>
+          <h3>Comments</h3>
+          <ul className="comment-list">
+            {recipeComments[recipe.id] &&
+              recipeComments[recipe.id].map((comment, index) => (
+                <li key={index}>
+                  {index + 1}. {comment}
+                </li>
+              ))}
+          </ul>
+          <Addreview onCommentSubmit={(comment) => handleCommentSubmit(comment, recipe.id)} />
+
+        </div>
+      ))}
     </div>
   );
 }
 
 export default Search;
+
