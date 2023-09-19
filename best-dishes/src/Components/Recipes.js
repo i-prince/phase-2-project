@@ -49,7 +49,7 @@ function RecipeApp() {
           <h3>{recipe.title}</h3>
           <img src={recipe.image} alt={recipe.title} />
           <p>{recipe.cuisines}</p>
-          <p>Instructions: {recipe.instructions}</p>
+          <p>Instructions: {removeHtmlTags(recipe.instructions)}</p> {/* Sanitize HTML tags */}
           <h3>Comments</h3>
           <ul className="comment-list">
             {recipeComments[recipe.id] &&
@@ -59,7 +59,6 @@ function RecipeApp() {
                 </li>
               ))}
           </ul>
-
           <Addreview onCommentSubmit={(comment) => handleCommentSubmit(comment, recipe.id)} />
         </div>
       ))}
@@ -68,4 +67,3 @@ function RecipeApp() {
 }
 
 export default RecipeApp;
-

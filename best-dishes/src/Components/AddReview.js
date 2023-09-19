@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 function CommentForm({ onCommentSubmit }) {
   const [comment, setComment] = useState('');
 
@@ -14,12 +15,19 @@ function CommentForm({ onCommentSubmit }) {
 
   return (
     <div>
-      <textarea
-        placeholder="Add your comment..."
-        value={comment}
-        onChange={handleCommentChange}
-      />
-      <button onClick={handleSubmit}>Submit</button>
+      <div className="input-group mb-3">
+        <textarea
+          className="form-control"
+          placeholder="Add your comment..."
+          value={comment}
+          onChange={handleCommentChange}
+        />
+        <div className="input-group-append">
+          <button className="btn btn-primary" onClick={handleSubmit}>
+            Submit
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
